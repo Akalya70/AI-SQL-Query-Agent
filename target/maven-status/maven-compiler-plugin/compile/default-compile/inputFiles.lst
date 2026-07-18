@@ -1,0 +1,10 @@
+C:\Users\sivar\Downloads\query_agent_updated\query_agent\src\main\java\com\sqlagent\config\AppConfig.java
+C:\Users\sivar\Downloads\query_agent_updated\query_agent\src\main\java\com\sqlagent\controller\SqlQueryController.java
+C:\Users\sivar\Downloads\query_agent_updated\query_agent\src\main\java\com\sqlagent\dto\SqlGenerationRequest.java
+C:\Users\sivar\Downloads\query_agent_updated\query_agent\src\main\java\com\sqlagent\dto\SqlGenerationResponse.java
+C:\Users\sivar\Downloads\query_agent_updated\query_agent\src\main\java\com\sqlagent\entity\QueryHistory.java
+C:\Users\sivar\Downloads\query_agent_updated\query_agent\src\main\java\com\sqlagent\exception\GlobalExceptionHandler.java
+C:\Users\sivar\Downloads\query_agent_updated\query_agent\src\main\java\com\sqlagent\repository\QueryHistoryRepository.java
+C:\Users\sivar\Downloads\query_agent_updated\query_agent\src\main\java\com\sqlagent\service\GeminiService.java
+C:\Users\sivar\Downloads\query_agent_updated\query_agent\src\main\java\com\sqlagent\service\SqlQueryService.java
+C:\Users\sivar\Downloads\query_agent_updated\query_agent\src\main\java\com\sqlagent\SqlAgentApplication.java

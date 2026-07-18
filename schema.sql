@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS ai_sql_agent;
+
+USE ai_sql_agent;
+
+CREATE TABLE IF NOT EXISTS query_history (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_input VARCHAR(1000) NOT NULL,
+    generated_sql VARCHAR(2000) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

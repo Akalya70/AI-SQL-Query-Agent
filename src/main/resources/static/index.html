@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI SQL Query Agent</title>
+
+<link rel="stylesheet" href="/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+    <div class="nav-inner">
+        <div class="logo">
+            <i class="fa-solid fa-database"></i>
+            <span>AI SQL Query Agent</span>
+        </div>
+
+        <div class="nav-actions">
+            <button id="themeToggle" class="icon-btn" title="Toggle theme" aria-label="Toggle theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <!-- Signed OUT state -->
+            <div class="auth-actions" id="authActions">
+                <button class="btn-ghost" onclick="openLogin()">Log in</button>
+                <button class="btn-primary" onclick="openRegister()">Sign up</button>
+            </div>
+
+            <!-- Signed IN state -->
+            <div class="user-actions" id="userActions">
+                <div class="user-chip">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span id="userNameLabel">Account</span>
+                </div>
+                <button class="btn-ghost" onclick="logout()">Log out</button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- ================= LOGIN MODAL ================= -->
+<div id="loginModal" class="modal">
+    <div class="modal-overlay" onclick="closeLogin()"></div>
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeLogin()" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-header">
+            <i class="fa-solid fa-right-to-bracket modal-icon"></i>
+            <h2>Welcome back</h2>
+            <p class="modal-sub">Log in to generate and save SQL queries.</p>
+        </div>
+
+        <form class="modal-form" onsubmit="event.preventDefault(); login();">
+            <label for="loginUser">Email or username</label>
+            <input type="text" id="loginUser" placeholder="you@example.com" autocomplete="username">
+
+            <label for="loginPass">Password</label>
+            <input type="password" id="loginPass" placeholder="••••••••" autocomplete="current-password">
+
+            <button type="submit" class="btn-primary btn-block">Log in</button>
+        </form>
+
+        <p class="modal-footer">
+            Don't have an account?
+            <a onclick="openRegister()">Create one</a>
+        </p>
+    </div>
+</div>
+
+<!-- ================= REGISTER MODAL ================= -->
+<div id="registerModal" class="modal">
+    <div class="modal-overlay" onclick="closeRegister()"></div>
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeRegister()" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-header">
+            <i class="fa-solid fa-user-plus modal-icon"></i>
+            <h2>Create your account</h2>
+            <p class="modal-sub">It only takes a minute.</p>
+        </div>
+
+        <form class="modal-form" onsubmit="event.preventDefault(); register();">
+            <label for="regName">Full name</label>
+            <input type="text" id="regName" placeholder="Jane Doe" autocomplete="name">
+
+            <label for="regEmail">Email</label>
+            <input type="email" id="regEmail" placeholder="you@example.com" autocomplete="email">
+
+            <label for="regPass">Password</label>
+            <input type="password" id="regPass" placeholder="••••••••" autocomplete="new-password">
+
+            <label for="regConfirm">Confirm password</label>
+            <input type="password" id="regConfirm" placeholder="••••••••" autocomplete="new-password">
+
+            <button type="submit" class="btn-primary btn-block">Create account</button>
+        </form>
+
+        <p class="modal-footer">
+            Already have an account?
+            <a onclick="openLogin()">Log in</a>
+        </p>
+    </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <div class="hero-left">
+        <span class="tag">AI Powered SQL Generator</span>
+
+        <h1>Turn plain English into <span>production-ready SQL</span></h1>
+
+        <p>
+            Describe what you need in everyday language. The agent writes,
+            checks, and stores the SQL query for you — instantly.
+        </p>
+
+        <button class="btn-primary btn-lg"
+            onclick="document.getElementById('generator').scrollIntoView({behavior:'smooth'})">
+            Get started
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <div class="hero-right">
+        <div class="terminal-card" aria-hidden="true">
+            <div class="terminal-bar">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="terminal-title">query_agent.sql</span>
+            </div>
+            <div class="terminal-body">
+                <p class="term-line term-comment">-- Show students with marks &gt; 80</p>
+                <p class="term-line">
+                    <span class="term-kw">SELECT</span> id, name, marks
+                    <span class="term-kw">FROM</span> students
+                </p>
+                <p class="term-line"><span class="term-kw">WHERE</span> marks &gt; 80
+                    <span class="term-kw">ORDER BY</span> marks <span class="term-kw">DESC</span>;
+                </p>
+                <p class="term-line term-cursor">&nbsp;</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= WORKSPACE ================= -->
+<section class="workspace" id="generator">
+
+    <!-- LEFT: Generator -->
+    <div class="card card-generate">
+        <div class="card-heading">
+            <h2>Generate SQL</h2>
+            <p>Write your request in plain language.</p>
+        </div>
+
+        <label class="field-label" for="userInput">Your request</label>
+        <textarea id="userInput" placeholder="Example: Show students with marks > 80"></textarea>
+
+        <div class="buttons">
+            <button id="generateBtn" class="btn-primary">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                Generate SQL
+            </button>
+            <button id="clearBtn" class="btn-secondary">Clear</button>
+        </div>
+
+        <div id="message" class="status-message"></div>
+
+        <div class="output-heading">
+            <h3>Output</h3>
+        </div>
+        <textarea id="sqlOutput" class="sql-output" readonly placeholder="Your generated SQL will appear here"></textarea>
+
+        <div class="buttons">
+            <button id="copyBtn" class="btn-secondary">
+                <i class="fa-regular fa-copy"></i> Copy
+            </button>
+            <button id="downloadBtn" class="btn-secondary">
+                <i class="fa-solid fa-download"></i> Download
+            </button>
+        </div>
+    </div>
+
+    <!-- RIGHT: History -->
+    <div class="card card-history">
+        <div class="card-heading">
+            <h2>Recent queries</h2>
+            <p>Your last 10 generated queries.</p>
+        </div>
+
+        <div id="historyList" class="history-list">
+            <p class="history-empty">No history yet</p>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+     AI SQL Query Agent
+</footer>
+
+<script src="/js/script.js"></script>
+</body>
+</html>
