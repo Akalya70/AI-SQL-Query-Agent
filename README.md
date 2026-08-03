@@ -10,7 +10,6 @@ This project is a full-stack web application that converts natural language into
 - View recent query history
 - Copy and download generated SQL
 - Input validation and error feedback
-
 ## Technology Stack
 - Java 25
 - Spring Boot 3.x
