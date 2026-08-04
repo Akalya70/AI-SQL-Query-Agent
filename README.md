@@ -18,7 +18,6 @@ This project is a full-stack web application that converts natural language into
 - MySQL
 - HTML, CSS, JavaScript
 - Google Gemini API
-
 ## Architecture
 The backend follows a layered architecture with controller, service, repository, entity, dto, config, and exception packages.
 
