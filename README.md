@@ -291,8 +291,6 @@ Recommended protections include:
 
 ---
 
----
-
 <p align="center">
   <strong>🤖 Making Database Interaction Simpler with AI 🤖</strong>
 </p>
