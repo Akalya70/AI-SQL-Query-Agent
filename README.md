@@ -1,70 +1,308 @@
-# AI SQL Query Agent
+# 🤖 AI SQL Query Agent
 
-## Project Overview
-This project is a full-stack web application that converts natural language into MySQL SQL queries using Google Gemini AI. It provides a polished UI for entering user prompts and viewing query history while keeping the workflow focused on SQL generation only.
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:4A00E0,100:8E2DE2&height=200&section=header&text=AI%20SQL%20Query%20Agent&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%"/>
+</p>
 
-## Features
-- Natural-language to SQL generation using Gemini
-- Responsive dashboard UI with modern visuals
-- Save generated queries to MySQL
-- View recent query history
-- Copy and download generated SQL
-- Input validation and error feedback
-## Technology Stack
-- Java 25
-- Spring Boot 3.x
-- Spring Web
-- Spring Data JPA
-- MySQL
-- HTML, CSS, JavaScript
-- Google Gemini API
-## Architecture
-The backend follows a layered architecture with controller, service, repository, entity, dto, config, and exception packages.
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/AI-8E2DE2?style=for-the-badge"/>
+</p>
 
-## Folder Structure
+## 📌 Overview
+
+**AI SQL Query Agent** is an AI-assisted application designed to simplify database interaction by allowing users to work with SQL through natural-language-style requests.
+
+The project combines **AI concepts, Java, Spring Boot, REST APIs, and MySQL** to explore how intelligent systems can assist users in interacting with relational databases.
+
+---
+
+## 🎯 Problem Statement
+
+Writing SQL queries requires knowledge of database structure and SQL syntax.
+
+Users who are not familiar with SQL may find it difficult to:
+
+* Understand database schemas.
+* Construct SQL queries.
+* Retrieve required information.
+* Write complex filtering conditions.
+* Interpret database results.
+
+The AI SQL Query Agent aims to provide a simpler interaction layer between the user and the database.
+
+---
+
+## 💡 Solution
+
+The system acts as an intelligent layer between the user and the database.
+
 ```text
-sql-agent/
-├── src/main/java/com/sqlagent/
-│   ├── controller/
-│   ├── service/
-│   ├── repository/
-│   ├── entity/
-│   ├── dto/
-│   ├── config/
-│   ├── exception/
-│   └── SqlAgentApplication.java
-├── src/main/resources/
-│   ├── static/css/
-│   ├── static/js/
-│   ├── templates/
-│   └── application.properties
-├── pom.xml
-└── README.md
+Natural Language Request
+          │
+          ▼
+      🤖 AI Agent
+          │
+          ▼
+    SQL Generation
+          │
+          ▼
+    SQL Validation
+          │
+          ▼
+      🗄️ MySQL
+          │
+          ▼
+    Query Execution
+          │
+          ▼
+      📊 Result
 ```
 
-## Database Setup
-1. Create a MySQL database named `ai_sql_agent`.
-2. Ensure the credentials in `application.properties` match your local MySQL setup.
-3. Spring Boot will auto-create the required table via JPA.
+---
 
-## Gemini API Setup
-1. Set your Gemini API key in `application.properties`.
-2. The backend sends prompts to the Gemini endpoint using a REST client.
+## ✨ Key Features
 
-## Installation Steps
+* 🤖 AI-assisted SQL query generation
+* 💬 Natural-language interaction
+* 🗄️ MySQL database connectivity
+* 🔗 REST API backend
+* ⚙️ Spring Boot architecture
+* 📊 Query result processing
+* 🔍 Database query execution
+* 🧩 Separation of controller, service, and database layers
+
+---
+
+## 🏗️ System Architecture
+
+```text
+┌─────────────────────────────┐
+│        User Request         │
+│ "Show all students..."      │
+└──────────────┬──────────────┘
+               │
+               ▼
+┌─────────────────────────────┐
+│          AI Agent           │
+│     Request Processing      │
+└──────────────┬──────────────┘
+               │
+               ▼
+┌─────────────────────────────┐
+│       SQL Generation        │
+└──────────────┬──────────────┘
+               │
+               ▼
+┌─────────────────────────────┐
+│      Query Validation       │
+└──────────────┬──────────────┘
+               │
+               ▼
+┌─────────────────────────────┐
+│           MySQL             │
+│        SQL Execution        │
+└──────────────┬──────────────┘
+               │
+               ▼
+┌─────────────────────────────┐
+│       Query Results         │
+└─────────────────────────────┘
+```
+
+---
+
+## 🧰 Technology Stack
+
+| Layer                | Technology             |
+| -------------------- | ---------------------- |
+| Programming Language | Java                   |
+| Backend              | Spring Boot            |
+| AI Integration       | AI / LLM API           |
+| Database             | MySQL                  |
+| API                  | REST API               |
+| Persistence          | Spring Data JPA / JDBC |
+| Build Tool           | Maven                  |
+| API Testing          | Postman                |
+| Version Control      | Git & GitHub           |
+
+---
+
+## 📂 Project Structure
+
+```text
+AI-SQL-Query-Agent/
+│
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── ...
+│   │   └── resources/
+│   │       └── application.properties
+│   │
+│   └── test/
+│
+├── pom.xml
+├── README.md
+└── .gitignore
+```
+
+---
+
+## 🔄 Query Processing Flow
+
+```text
+👤 User
+   │
+   │ Natural Language
+   ▼
+🤖 AI Agent
+   │
+   │ Generated SQL
+   ▼
+🔍 SQL Validation
+   │
+   ▼
+🗄️ MySQL
+   │
+   │ Query Result
+   ▼
+📊 Response
+   │
+   ▼
+👤 User
+```
+
+---
+
+## 💬 Example
+
+### User Input
+
+```text
+Show all students who scored more than 80 marks.
+```
+
+### AI-generated SQL
+
+```sql
+SELECT *
+FROM students
+WHERE marks > 80;
+```
+
+### Result
+
+```text
+Student records matching the requested condition
+```
+
+> The exact SQL generated depends on the database schema and AI implementation.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+* Java 21 or compatible Java version
+* Maven
+* MySQL
+* Git
+* Postman
+* Configured AI/LLM API access if required by the project
+
+### Clone
+
+```bash
+git clone https://github.com/Akalya70/AI-SQL-Query-Agent.git
+```
+
+### Navigate
+
+```bash
+cd AI-SQL-Query-Agent
+```
+
+### Configure Database
+
+Update:
+
+```text
+src/main/resources/application.properties
+```
+
+with your database configuration.
+
+### Configure AI API
+
+Store the AI API key securely using environment variables.
+
+**Never commit API keys directly to GitHub.**
+
+### Build
+
 ```bash
 mvn clean install
+```
+
+### Run
+
+```bash
 mvn spring-boot:run
 ```
 
-## API Endpoints
-- POST `/api/sql/generate`
-- GET `/api/history`
+---
 
-## How to Run
-Open the application in a browser at `http://localhost:8080`.
+## 🔐 Security
 
-## Future Enhancements
-- Add query execution support with user confirmation
-- Support multiple database dialects
-- Improve prompt tuning for complex SQL generation
+AI-generated SQL should never be blindly executed in a production environment.
+
+Recommended protections include:
+
+* SQL validation
+* Read-only database users where appropriate
+* Query allowlisting
+* Parameterized queries
+* Authentication and authorization
+* Rate limiting
+* API-key protection
+* Query timeout controls
+* Database permission restrictions
+
+---
+
+## 🚀 Future Enhancements
+
+* 🧠 Improved natural-language understanding
+* 🗣️ Conversational database interaction
+* 📊 Automatic chart generation
+* 📋 Query history
+* 🔐 Role-based access control
+* 🧪 SQL query validation
+* 🛡️ Advanced SQL security
+* 📈 Database analytics
+* 🔎 Schema-aware query generation
+* 💬 Conversational follow-up queries
+
+---
+
+## 🔗 Repository
+
+[AI SQL Query Agent — GitHub](https://github.com/Akalya70/AI-SQL-Query-Agent?utm_source=chatgpt.com)
+
+---
+
+## 👩‍💻 Developer
+
+**Akalya Murugesan**
+
+Computer Science & Engineering
+
+---
+
+<p align="center">
+  <strong>🤖 Making Database Interaction Simpler with AI 🤖</strong>
+</p>
