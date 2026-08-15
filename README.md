@@ -124,8 +124,6 @@ Natural Language Request
 | Database             | MySQL                  |
 | API                  | REST API               |
 | Persistence          | Spring Data JPA / JDBC |
-| Build Tool           | Maven                  |
-| API Testing          | Postman                |
 | Version Control      | Git & GitHub           |
 
 ---
@@ -208,10 +206,8 @@ Student records matching the requested condition
 ### Prerequisites
 
 * Java 21 or compatible Java version
-* Maven
 * MySQL
 * Git
-* Postman
 * Configured AI/LLM API access if required by the project
 
 ### Clone
@@ -294,12 +290,6 @@ Recommended protections include:
 [AI SQL Query Agent — GitHub](https://github.com/Akalya70/AI-SQL-Query-Agent?utm_source=chatgpt.com)
 
 ---
-
-## 👩‍💻 Developer
-
-**Akalya Murugesan**
-
-Computer Science & Engineering
 
 ---
 
