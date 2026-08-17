@@ -290,7 +290,6 @@ Recommended protections include:
 [AI SQL Query Agent — GitHub](https://github.com/Akalya70/AI-SQL-Query-Agent?utm_source=chatgpt.com)
 
 
-
 <p align="center">
   <strong>🤖 Making Database Interaction Simpler with AI 🤖</strong>
 </p>
