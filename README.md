@@ -205,7 +205,7 @@ Student records matching the requested condition
 
 ### Prerequisites
 
-* Java 21 or compatible Java version
+* Java 21 
 * MySQL
 * Git
 * Configured AI/LLM API access if required by the project
