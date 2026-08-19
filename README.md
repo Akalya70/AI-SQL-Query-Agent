@@ -61,7 +61,6 @@ Natural Language Request
       📊 Result
 ```
 
----
 
 ## ✨ Key Features
 
