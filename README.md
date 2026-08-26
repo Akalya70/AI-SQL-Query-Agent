@@ -126,7 +126,7 @@ Natural Language Request
 | AI Integration       | AI / LLM API           |
 | Database             | MySQL                  |
 | API                  | REST API               |
-| Persistence          | Spring Data JPA / JDBC |
+| Persistence          | Spring Data JPA        |
 | Version Control      | Git & GitHub           |
 
 ---
