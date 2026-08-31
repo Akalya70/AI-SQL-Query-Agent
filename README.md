@@ -13,6 +13,7 @@
 
 ## 📌 Overview
 
+
 **AI SQL Query Agent** is an AI-assisted application designed to simplify database interaction by allowing users to work with SQL through natural-language-style requests.
 
 
