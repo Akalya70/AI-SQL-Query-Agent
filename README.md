@@ -19,7 +19,6 @@
 
 The project combines **AI concepts, Java, Spring Boot, REST APIs, and MySQL** to explore how intelligent systems can assist users in interacting with relational databases.
 
-
 ---
 
 ## 🎯 Problem Statement
