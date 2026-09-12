@@ -21,6 +21,7 @@ The project combines **AI concepts, Java, Spring Boot, REST APIs, and MySQL** to
 
 ---
 
+
 ## 🎯 Problem Statement
 
 Writing SQL queries requires knowledge of database structure and SQL syntax.
