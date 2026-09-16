@@ -43,6 +43,7 @@ The AI SQL Query Agent aims to provide a simpler interaction layer between the u
 ## 💡 Solution
 
 
+
 The system acts as an intelligent layer between the user and the database.
 
 ```text
