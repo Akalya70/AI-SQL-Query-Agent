@@ -12,7 +12,6 @@
   <img src="https://img.shields.io/badge/AI-8E2DE2?style=for-the-badge"/>
 </p>
 
-
 ## 📌 Overview
 
 **AI SQL Query Agent** is an AI-assisted application designed to simplify database interaction by allowing users to work with SQL through natural-language-style requests.
