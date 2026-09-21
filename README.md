@@ -226,6 +226,7 @@ git clone https://github.com/Akalya70/AI-SQL-Query-Agent.git
 cd AI-SQL-Query-Agent
 ```
 
+
 ### Configure Database
 
 Update:
