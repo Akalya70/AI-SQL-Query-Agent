@@ -1,6 +1,5 @@
 # 🤖 AI SQL Query Agent
 
-
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:4A00E0,100:8E2DE2&height=200&section=header&text=AI%20SQL%20Query%20Agent&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%"/>
 </p>
