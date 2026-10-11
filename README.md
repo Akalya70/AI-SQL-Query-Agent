@@ -73,7 +73,6 @@ Natural Language Request
 * 🧩 Separation of controller, service, and database layers
 
 ---
-
 ## 🏗️ System Architecture
 
 ```text
