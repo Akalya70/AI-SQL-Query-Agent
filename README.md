@@ -234,7 +234,6 @@ Store the AI API key securely using environment variables.
 **Never commit API keys directly to GitHub.**
 
 ### Build
-
 ```bash
 mvn clean install
 ```
