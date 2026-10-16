@@ -203,7 +203,6 @@ Student records matching the requested condition
 * Configured AI/LLM API access if required by the project
 
 ### Clone
-
 ```bash
 git clone https://github.com/Akalya70/AI-SQL-Query-Agent.git
 ```
