@@ -14,7 +14,6 @@
 The project combines **AI concepts, Java, Spring Boot, REST APIs, and MySQL** to explore how intelligent systems can assist users in interacting with relational databases.
 ---
 ## 🎯 Problem Statement
-
 Writing SQL queries requires knowledge of database structure and SQL syntax.
 
 Users who are not familiar with SQL may find it difficult to:
