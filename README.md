@@ -65,7 +65,6 @@ Natural Language Request
 * 📊 Query result processing
 * 🔍 Database query execution
 * 🧩 Separation of controller, service, and database layers
-
 ---
 ## 🏗️ System Architecture
 
