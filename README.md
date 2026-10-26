@@ -103,7 +103,6 @@ Natural Language Request
 ```
 
 ---
-
 ## 🧰 Technology Stack
 
 | Layer                | Technology             |
