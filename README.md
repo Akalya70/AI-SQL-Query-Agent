@@ -137,7 +137,6 @@ AI-SQL-Query-Agent/
 ```
 
 ---
-
 ## 🔄 Query Processing Flow
 
 ```text
